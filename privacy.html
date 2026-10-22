@@ -24,7 +24,7 @@
   <h1>Privacy Policy</h1>
   <p class="muted">Effective date: 22 October 2026</p>
 
-  <p>This policy describes how the Tender Radar Chrome extension ("Tender Radar", "the extension"), published by Priyank Rajput, handles your data. Tender Radar has no server. The developer does not receive, store or see any of your data.</p>
+  <p>This policy describes how the Tender Radar Chrome extension ("Tender Radar", "the extension"), published by Priyank Rajput, handles your data. Tender Radar has no server. The extension itself sends nothing to the developer. The only data the developer ever receives is what Dodo Payments shares with a seller when you buy a Pro license: your name, email address and purchase details, used to support that purchase and nothing else.</p>
 
   <h2>1. What data the extension accesses</h2>
   <ul>
@@ -48,9 +48,10 @@
     <li><strong>To GeM (bidplus.gem.gov.in).</strong> "Scan all of GeM" sends your keywords as search requests to GeM's own bid listing endpoint, from the GeM tab open in your browser and with that page's session, the same requests the page sends when you search it yourself. Scans are rate-limited: one request at a time, at most 10 result pages per keyword and 100 requests per scan. "Extract" downloads public bid PDFs from GeM.</li>
     <li><strong>To Google.</strong> When you send a bid to your sheet, its row (the bid's card details, document link, the 20 extracted fields and the time sent) goes to the Google Sheets API (sheets.googleapis.com), written to your own spreadsheet. If you instead saved an Apps Script URL under Advanced, the row is posted to that URL, which is a script you deployed in your own Google account.</li>
     <li><strong>"Add to calendar".</strong> If you click it, Google Calendar opens in a new tab with the bid's number, items, department, end time and document link filled in as a draft event. Nothing is saved unless you save the event.</li>
-    <li><strong>To the developer: nothing.</strong> The extension has no server, sends no data to the developer, and contains no analytics, tracking, advertising or crash-reporting code.</li>
+    <li><strong>To the developer: nothing from the extension.</strong> It has no server, sends no data to the developer, and contains no analytics, tracking, advertising or crash-reporting code. If you buy a Pro license, Dodo Payments shares your name, email address and purchase details with the developer as the seller.</li>
   </ul>
   <p>Deadline reminders are shown by Chrome's own notification system on your computer.</p>
+  <p><strong>Tender Radar Pro.</strong> When you activate a Pro license, the extension sends the license key and a device label ("Tender Radar for Chrome") to Dodo Payments, the merchant of record that sells Pro, to validate the purchase. It sends the key again to re-check it about once a week, and when you click "Remove key". The key is kept in Chrome's sync storage with your other settings. No other data goes to Dodo. Buying Pro happens on Dodo's own checkout page, under Dodo's privacy policy, and Dodo shares the order, including your name and email address, with the developer as the seller.</p>
 
   <h2>4. No sale or sharing</h2>
   <p>Your data is not sold, rented or shared with anyone. It is not used for advertising, for purposes unrelated to the extension's single purpose, or to determine creditworthiness or for lending.</p>

@@ -9,20 +9,32 @@
   @media (prefers-color-scheme: dark) { :root { --fg: #ececf0; --muted: #a4a4ad; --bg: #141416; --line: #2c2c31; --accent: #5fd3a8; } }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
-  main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 16px 4rem; }
+  main { max-width: 42rem; margin: 0 auto; padding: 1.5rem 16px 4rem; }
+  nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; font-size: .95rem; border-bottom: 1px solid var(--line); padding-bottom: .75rem; margin-bottom: 2rem; }
+  nav .home { font-weight: 600; margin-right: auto; color: var(--fg); text-decoration: none; }
   h1 { font-size: 1.9rem; margin: 0 0 .25rem; line-height: 1.2; }
   h2 { font-size: 1.2rem; margin: 2.25rem 0 .5rem; }
   .muted { color: var(--muted); }
   a { color: var(--accent); overflow-wrap: anywhere; }
   li { margin-bottom: .4rem; }
   blockquote { margin: 1rem 0; padding: .75rem 1rem; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  footer { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1rem; font-size: .9rem; color: var(--muted); }
 </style>
 </head>
 <body>
 <main>
-  <p><a href="index.html">Tender Radar</a></p>
+  <nav>
+    <a class="home" href="index.html">Priyank Rajput</a>
+    <a href="index.html#products">Products</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="terms.html">Terms</a>
+    <a href="refunds.html">Refunds</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
   <h1>Privacy Policy</h1>
   <p class="muted">Effective date: 22 October 2026</p>
+  <p>This policy covers Tender Radar. For Spec Sheet Normaliser, read the <a href="https://cool2568.github.io/spec-normaliser-site/privacy.html">Spec Sheet Normaliser privacy policy</a>.</p>
 
   <p>This policy describes how the Tender Radar Chrome extension ("Tender Radar", "the extension"), published by Priyank Rajput, handles your data. Tender Radar has no server. The extension itself sends nothing to the developer. The only data the developer ever receives is what Dodo Payments shares with a seller when you buy a Pro license: your name, email address and purchase details, used to support that purchase and nothing else.</p>
 
@@ -77,6 +89,7 @@
 
   <h2>9. Contact</h2>
   <p>Priyank Rajput, <a href="mailto:darpan1871@gmail.com">darpan1871@gmail.com</a></p>
+  <footer><a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="privacy.html">Privacy</a> · <a href="index.html#contact">Contact</a><br>© 2026 Priyank Rajput, Delhi, India.</footer>
 </main>
 </body>
 </html>

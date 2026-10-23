@@ -3,56 +3,115 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tender Radar</title>
-<meta name="description" content="A Chrome extension for GeM bidders: find bids that match your keywords and put their key fields in your own Google Sheet.">
+<title>Tender Radar and Spec Sheet Normaliser</title>
+<meta name="description" content="Software by Priyank Rajput, Delhi: Tender Radar, a Chrome extension for GeM bidders, and Spec Sheet Normaliser, a datasheet comparison tool for battery storage and solar modules.">
 <style>
   :root { color-scheme: light dark; --fg: #1d1d1f; --muted: #5a5a60; --bg: #fff; --line: #e2e2e6; --accent: #0b6b4f; }
   @media (prefers-color-scheme: dark) { :root { --fg: #ececf0; --muted: #a4a4ad; --bg: #141416; --line: #2c2c31; --accent: #5fd3a8; } }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
-  main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 16px 4rem; }
-  h1 { font-size: 2.2rem; margin: 0 0 .5rem; line-height: 1.2; }
-  h2 { font-size: 1.25rem; margin: 2.5rem 0 .75rem; }
-  p, li { color: var(--fg); }
+  main { max-width: 42rem; margin: 0 auto; padding: 1.5rem 16px 4rem; }
+  nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; font-size: .95rem; border-bottom: 1px solid var(--line); padding-bottom: .75rem; margin-bottom: 2rem; }
+  nav .home { font-weight: 600; margin-right: auto; color: var(--fg); text-decoration: none; }
+  h1 { font-size: 2rem; margin: 0 0 .5rem; line-height: 1.2; }
+  h2 { font-size: 1.4rem; margin: 3rem 0 .75rem; }
+  h3 { font-size: 1.15rem; margin: 0 0 .5rem; }
   .lede { font-size: 1.1rem; color: var(--muted); }
+  .muted { color: var(--muted); }
+  .card { border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1rem; }
+  .card p { margin: .5rem 0; }
   ul.benefits { list-style: none; padding: 0; display: grid; gap: .75rem; }
   ul.benefits li { border: 1px solid var(--line); border-radius: 10px; padding: .9rem 1rem; }
   ul.benefits strong { display: block; }
   ol li { margin-bottom: .5rem; }
-  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: .5rem 0 1rem; font-size: .95rem; }
+  th, td { border: 1px solid var(--line); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  a { color: var(--accent); overflow-wrap: anywhere; }
   footer { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1rem; font-size: .9rem; color: var(--muted); }
 </style>
 </head>
 <body>
 <main>
-  <h1>Tender Radar</h1>
-  <p class="lede">Tender Radar is a Chrome extension for suppliers who bid on GeM (bidplus.gem.gov.in). It finds the ongoing bids that match your keywords and pulls the key fields out of each bid document, so you can decide which bids to pursue without reading every PDF.</p>
+  <nav>
+    <a class="home" href="index.html">Priyank Rajput</a>
+    <a href="index.html#products">Products</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="terms.html">Terms</a>
+    <a href="refunds.html">Refunds</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
 
-  <h2>What you get</h2>
+  <h1>Software for Indian bidders and solar engineers</h1>
+  <p class="lede">Priyank Rajput is a sole proprietor in Delhi, India, who makes two browser tools: Tender Radar, for suppliers bidding on the Government e-Marketplace (GeM), and Spec Sheet Normaliser, for comparing battery storage and solar module datasheets. Both run in your browser and both are free during their beta.</p>
+
+  <h2 id="products">Products</h2>
+
+  <div class="card">
+    <h3>Tender Radar</h3>
+    <p>A Chrome extension that finds the ongoing bids on GeM (bidplus.gem.gov.in) that match your keywords: it highlights matching bids on the page you are browsing and can scan all of GeM's ongoing bids in one go. For each bid it reads 20 key fields from the bid PDF inside your browser, such as end date, EMD amount, turnover and experience requirements, and MSE and startup relaxations. With one click it adds the bid as a row in your own Google Sheet, reminds you before tracked bids close and adds the deadline to Google Calendar.</p>
+    <p><strong>Who it is for:</strong> suppliers and their bid teams who bid on GeM and want to decide which bids to pursue without reading every PDF.</p>
+    <p><a href="https://chromewebstore.google.com/detail/tender-radar/eppfhdplgifecaapficgmbnmclpenppj">Install Tender Radar from the Chrome Web Store</a></p>
+  </div>
+
+  <div class="card">
+    <h3>Spec Sheet Normaliser</h3>
+    <p>A web app, also available as a Chrome side-panel extension, that turns battery energy storage and solar PV module datasheet PDFs into one comparison table: fields as rows, products as columns. Each value is converted to one unit (kWh, kW, V, kg, mm, °C), and differently named labels such as "Usable energy" and "Available energy" land in the same row. PDFs are read in your browser and nothing is uploaded; the table copies straight into a spreadsheet.</p>
+    <p><strong>Who it is for:</strong> EPC engineers and procurement teams comparing battery storage products and solar modules from different manufacturers.</p>
+    <p><a href="https://cool2568.github.io/spec-normaliser-site/">Open Spec Sheet Normaliser</a></p>
+  </div>
+
+  <h2>Tender Radar in detail</h2>
   <ul class="benefits">
     <li><strong>Every matching GeM bid in one list</strong>Matching bid cards are highlighted on the page you are browsing, and "Scan all of GeM" searches all ongoing bids for your keywords and lists each match once, soonest deadline first.</li>
     <li><strong>The bid document's 20 key fields as a row in your own Google Sheet</strong>End date, EMD amount, turnover and experience requirements, MSE and startup relaxations and more are read from the bid PDF and written to a spreadsheet in your Google Drive.</li>
     <li><strong>Nothing leaves your computer</strong>Bid PDFs are read inside your browser. There is no Tender Radar server: your keywords and bids are never sent to us.</li>
   </ul>
 
-  <h2>How it works</h2>
+  <h3>How it works</h3>
   <ol>
     <li>Install the extension, open the side panel and type the keywords you bid on (for example, solar, battery, transformer).</li>
     <li>Open bidplus.gem.gov.in. Matching bids are highlighted; click "Scan all of GeM" to search every ongoing bid.</li>
     <li>Click "Extract" on a bid to read its 20 key fields from the bid document.</li>
     <li>Click "Connect Google Sheets" once, then "Send to Sheet" to add the bid as a row. Sent bids are tracked, and Chrome reminds you 48 hours and 24 hours before they close.</li>
   </ol>
+  <p class="muted">Tender Radar only reads GeM. It does not log in to your GeM account and does not submit bids.</p>
 
-  <h2>Free during beta</h2>
-  <p>Tender Radar is free while it is in beta. Paid plans will be announced here.</p>
+  <h2 id="pricing">Pricing</h2>
+  <p>Both products are <strong>free during beta</strong>, with every feature switched on. Pro billing starts after the beta; for Tender Radar it will be announced on this page two weeks ahead. Payments are processed by <a href="https://dodopayments.com">Dodo Payments</a>, the merchant of record. After you pay, a license key is emailed to you, which you enter in the product to switch Pro on. Subscriptions renew monthly and can be cancelled at any time from the Dodo customer portal link in your receipt email. See the <a href="refunds.html">refund policy</a>.</p>
+
+  <h3>Tender Radar</h3>
+  <table>
+    <tr><th></th><th>Free</th><th>Pro</th></tr>
+    <tr><th>Includes</th><td>Keyword highlighting, Scan all of GeM, Extract 20 fields, Copy row</td><td>Everything in Free, plus Google Sheets sync, deadline reminders and Add to calendar</td></tr>
+    <tr><th>Price</th><td>₹0</td><td>₹299 per month (GST handled by Dodo Payments at checkout)</td></tr>
+  </table>
+
+  <h3>Spec Sheet Normaliser</h3>
+  <table>
+    <tr><th></th><th>Free</th><th>Pro</th></tr>
+    <tr><th>Includes</th><td>All features, up to 3 datasheets compared at a time</td><td>All features, no limit on the number of datasheets</td></tr>
+    <tr><th>Price</th><td>$0</td><td>$19 per month per seat; a $149 per year plan is planned</td></tr>
+  </table>
+  <p class="muted">During the beta there is no datasheet limit and no charge.</p>
 
   <h2>Privacy</h2>
-  <p>Tender Radar has no server and no analytics. It talks only to GeM, from your own browser, and to Google, to write to the one spreadsheet it creates in your Drive. It asks Google for the narrowest Drive permission, which covers only files the extension created. Read the full <a href="privacy.html">privacy policy</a>.</p>
+  <p>Neither product has a server that receives your documents, and neither contains analytics. Tender Radar talks only to GeM, from your own browser, and to Google, to write to the one spreadsheet it creates in your Drive. Spec Sheet Normaliser reads datasheets in the browser and uploads nothing. Read the <a href="privacy.html">Tender Radar privacy policy</a> and the <a href="https://cool2568.github.io/spec-normaliser-site/privacy.html">Spec Sheet Normaliser privacy policy</a>.</p>
 
-  <h2>Contact</h2>
-  <p>Questions or problems: <a href="mailto:darpan1871@gmail.com">darpan1871@gmail.com</a></p>
+  <h2 id="contact">Contact</h2>
+  <p>Priyank Rajput (sole proprietor)<br>Delhi, India<br>Email: <a href="mailto:darpan1871@gmail.com">darpan1871@gmail.com</a></p>
+  <p>Support, billing questions, license keys and refund requests all go to the email above. Please include your Dodo order ID for anything about a purchase.</p>
+  <ul>
+    <li><a href="https://chromewebstore.google.com/detail/tender-radar/eppfhdplgifecaapficgmbnmclpenppj">Tender Radar on the Chrome Web Store</a></li>
+    <li><a href="https://cool2568.github.io/spec-normaliser-site/">Spec Sheet Normaliser</a></li>
+    <li><a href="terms.html">Terms of Service</a>, <a href="refunds.html">Refund and cancellation policy</a>, <a href="privacy.html">Privacy policy</a></li>
+  </ul>
 
-  <footer>Tender Radar is an independent tool. It is not affiliated with or endorsed by GeM or Google.</footer>
+  <footer>
+    <p><a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="privacy.html">Privacy</a> · <a href="index.html#contact">Contact</a></p>
+    <p>© 2026 Priyank Rajput, Delhi, India. Tender Radar is an independent tool and is not affiliated with or endorsed by GeM or Google.</p>
+  </footer>
 </main>
 </body>
 </html>
